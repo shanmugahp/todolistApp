@@ -1,0 +1,38 @@
+version: '3.1'
+
+services:
+   client:
+     build: .
+     volumes:
+       - "./client:/app"
+     ports:
+       - "8080:8081"
+     depends_on:
+       - server
+
+  server:
+    build: .
+    volumes:
+      - "./server:/app"
+    ports:
+      - "8081:8081"
+    depends_on:
+      - db
+
+  db:
+    image: mongo:latest
+    environment:
+      MONGO_INITDB_DATABASE: itemsdb
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: root123
+    ports:
+      - 27017:27017
+    restart: always
+    volumes:
+      - ./data/mongo/users.js:/docker-entrypoint-initdb.d/users.js:ro
+      - mongodb:/data/db
+      - mongodb_config:/data/configdb
+
+volumes:
+  mongodb:
+  mongodb_config:
