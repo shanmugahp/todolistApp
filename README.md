@@ -10,8 +10,12 @@ The application has three components.
 2) Resource server built on nodejs express framework.
 3) MongoDB backend for storage.
 
-run the stack: docker-compose up
+run the backend: docker-compose up
 
+run the client:
+cd $PROJECT_HOME/client
+npm install
+npm start
 login to http://localhost:8080  for the UI
 API is hosted on http://localhost:8081
 
