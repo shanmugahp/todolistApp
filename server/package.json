@@ -1,0 +1,35 @@
+{
+  "name": "todoapp",
+  "version": "1.0.0",
+  "description": "REST API to perform CRUD operations on TODO tasks in MongoDB.",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shanmugahp/todolistApp.git"
+  },
+  "author": "Shanmuga Puttaswamy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shanmugahp/todolistApp/issues"
+  },
+  "homepage": "https://github.com/shanmugahp/todolistApp#readme",
+ "dependencies": {
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.4",
+    "express": "^4.16.3",
+    "jsonwebtoken": "^8.3.0",
+    "morgan": "^1.9.0",
+    "mongoose": "^5.10.0",
+    "nodemon": "^1.18.3",
+    "@okta/jwt-verifier": "^2.3.0",
+    "express-validator": "^6.14.0",
+    "dotenv": "^16.0.0",
+    "njwt": "^1.2.0",
+   "jwt-decode": "^3.1.2",
+   "@okta/jwt-verifier": "^2.3.0",
+   "@okta/oidc-middleware": "^4.5.1"
+  }
+}
