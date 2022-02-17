@@ -57,7 +57,7 @@ export default function Tasks() {
     // formData.set('taskname', formData.get('taskname'));
     // formData.set('description', formData.get('description'));
     // formData.set('duedate', formData.get('duedate'));
-    setFormData({ duedate: startDate });
+
     saveTasks() // Save tasks when form is submitted
   }
 
@@ -67,8 +67,12 @@ export default function Tasks() {
         ...formData,
         [event.target.name]: value
       });
-  }
 
+  }
+  const onChangeEvent = (event) => {
+        console.log(event);
+        this.setState({ selectedDate: event });
+    };
   return (
     <div className="Tasks">
         <Header as="h1">
@@ -86,7 +90,10 @@ export default function Tasks() {
     </Form.Field>
           <Form.Field>
       <label>Task Due Date</label>
-      <DatePicker name="duedate" selected={startDate} onChange={(date) => setStartDate(date)} />
+      <DatePicker name="duedate" selected={startDate} onChange={(date) => {setStartDate(date);setFormData({
+        ...formData,
+        duedate: date
+      });}} />
     </Form.Field>
 
     <Button inverted color='blue' size='small' type='submit'>Add Task</Button>
